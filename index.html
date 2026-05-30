@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Zentra AI</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Zentra AI</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="app">
+<!-- 🔐 AUTH SCREEN -->
+<div id="auth" class="auth">
+
+  <div class="authBox">
+
+    <h1>🤖 Zentra AI</h1>
+
+    <input id="name" placeholder="Full Name">
+    <input id="birthday" type="date">
+
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="register()">Create Account</button>
+    <button onclick="login()">Login</button>
+    <button onclick="forgot()">Forgot Password</button>
+
+  </div>
+
+</div>
+
+<!-- 🚀 MAIN APP -->
+<div id="app" class="app hidden">
 
   <!-- SIDEBAR -->
-  <div class="sidebar">
+  <aside class="sidebar">
+
     <h2>🤖 Zentra AI</h2>
 
     <button onclick="setMode('chat')">💬 Chat</button>
-    <button onclick="setMode('roast')">🔥 Roast AI</button>
-    <button onclick="setMode('code')">💻 Code AI</button>
-    <button onclick="setMode('idea')">💡 Ideas</button>
-    <button onclick="setMode('game')">🎮 Game Builder</button>
+    <button onclick="setMode('roast')">🔥 Roast</button>
+    <button onclick="setMode('code')">💻 Code</button>
+    <button onclick="openProfile()">👤 Profile</button>
+    <button onclick="logout()">🚪 Logout</button>
 
-    <div class="bottom">
-      <p>All-in-One AI System</p>
-    </div>
-  </div>
+  </aside>
 
-  <!-- MAIN CHAT AREA -->
-  <div class="main">
+  <!-- MAIN CHAT -->
+  <main class="main">
 
-    <div id="chatBox" class="chatBox"></div>
+    <div id="chat" class="chat"></div>
 
-    <div class="inputArea">
+    <div class="inputBar">
       <input id="input" placeholder="Message Zentra AI...">
       <button onclick="send()">➤</button>
     </div>
+
+  </main>
+
+</div>
+
+<!-- 👤 PROFILE MODAL -->
+<div id="profile" class="modal hidden">
+
+  <div class="modalBox">
+
+    <h2>👤 Profile</h2>
+
+    <input id="p_name" placeholder="Name">
+    <input id="p_birthday" type="date">
+    <input id="p_email" placeholder="Email (read only)">
+
+    <button onclick="saveProfile()">Save</button>
+    <button onclick="closeProfile()">Close</button>
 
   </div>
 
