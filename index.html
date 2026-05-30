@@ -1,18 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Zentra AI</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>🤖 Zentra AI</h1>
+<div class="app">
 
-  <input id="input" placeholder="Ask anything...">
-  <button onclick="askAI()">Send</button>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>🤖 Zentra AI</h2>
 
-  <div id="output"></div>
+    <button onclick="setMode('chat')">💬 Chat</button>
+    <button onclick="setMode('roast')">🔥 Roast AI</button>
+    <button onclick="setMode('code')">💻 Code AI</button>
+    <button onclick="setMode('idea')">💡 Ideas</button>
+    <button onclick="setMode('game')">🎮 Game Builder</button>
 
-  <script src="script.js"></script>
+    <div class="bottom">
+      <p>All-in-One AI System</p>
+    </div>
+  </div>
+
+  <!-- MAIN CHAT AREA -->
+  <div class="main">
+
+    <div id="chatBox" class="chatBox"></div>
+
+    <div class="inputArea">
+      <input id="input" placeholder="Message Zentra AI...">
+      <button onclick="send()">➤</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
